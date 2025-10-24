@@ -2,11 +2,9 @@
   "name": "bds-portfolio",
   "version": "1.0.0",
   "description": "A professional portfolio website for a real estate consultant.",
-  "main": "index.html",
+  "main": "public/index.html",
   "scripts": {
-    "start": "live-server .",
-    "build": "echo 'Static site - no build process needed'",
-    "dev": "live-server ."
+    "build": "echo 'Static site - no build process needed'"
   },
   "keywords": [
     "real estate",
@@ -15,9 +13,5 @@
     "website"
   ],
   "author": "Hoàng Quốc Đại",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+  "license": "MIT"
 }
