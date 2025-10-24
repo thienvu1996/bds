@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "live-server .",
-    "build": "echo 'Build process can be defined here.'"
+    "build": "echo 'Static site - no build process needed'",
+    "dev": "live-server ."
   },
   "keywords": [
     "real estate",
@@ -13,7 +14,7 @@
     "consultant",
     "website"
   ],
-  "author": "[Tên Bạn]",
+  "author": "Hoàng Quốc Đại",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
