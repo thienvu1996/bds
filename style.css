@@ -1,0 +1,228 @@
+/* Thiết lập cơ bản */
+:root {
+    --primary-color: #007bff; /* Màu xanh dương chủ đạo */
+    --secondary-color: #f8f9fa; /* Màu nền phụ */
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- HEADER/NAV --- */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.header ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background-color: #e9ecef;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- SECTIONS CHUNG --- */
+.section {
+    padding: 60px 0;
+}
+
+.section:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    width: auto;
+    margin: 0 auto 40px auto;
+    display: block;
+}
+
+/* --- GIỚI THIỆU BẢN THÂN --- */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-area, .text-area {
+    flex: 1;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- DANH MỤC DỰ ÁN --- */
+.projects-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- LIÊN HỆ --- */
+.contact-section {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 0;
+}
+
+.contact-section h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
+.contact-btn {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.contact-btn:hover {
+    background-color: #ccc;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* --- RESPONSIVE CHO MOBILE --- */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+    .header ul {
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 10px;
+    }
+    .hero h2 {
+        font-size: 2em;
+    }
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-img {
+        margin-bottom: 20px;
+    }
+}

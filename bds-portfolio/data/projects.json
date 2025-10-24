@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Vinhomes Ocean Park",
+        "type": "Chung cư Cao cấp",
+        "description": "Đã tư vấn thành công 20 giao dịch đầu tư thuê/lại. Phân tích Tỷ suất Sinh lời >12%/năm.",
+        "image": "assets/images/project-image-1.jpg",
+        "caseStudyLink": "#"
+    },
+    {
+        "id": 2,
+        "title": "Đất Nền ven biển X",
+        "type": "Nghỉ dưỡng",
+        "description": "Tư vấn pháp lý cho Khách hàng nước ngoài. Đảm bảo quy hoạch và giấy phép xây dựng rõ ràng.",
+        "image": "assets/images/project-image-2.jpg",
+        "caseStudyLink": "#"
+    },
+    {
+        "id": 3,
+        "title": "Dự án The Grand Manhattan",
+        "type": "Chung cư cao cấp",
+        "description": "Dự án nổi bật với thiết kế hiện đại và vị trí đắc địa. Tư vấn đầu tư và cho thuê thành công.",
+        "image": "assets/images/project-image-3.jpg",
+        "caseStudyLink": "#"
+    },
+    {
+        "id": 4,
+        "title": "Biệt thự nghỉ dưỡng tại Đà Nẵng",
+        "type": "Biệt thự",
+        "description": "Tư vấn và hỗ trợ khách hàng trong việc mua bán biệt thự nghỉ dưỡng tại Đà Nẵng.",
+        "image": "assets/images/project-image-4.jpg",
+        "caseStudyLink": "#"
+    }
+]

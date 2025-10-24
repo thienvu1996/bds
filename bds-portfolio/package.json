@@ -1,0 +1,22 @@
+{
+  "name": "bds-portfolio",
+  "version": "1.0.0",
+  "description": "A professional portfolio website for a real estate consultant.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server .",
+    "build": "echo 'Build process can be defined here.'"
+  },
+  "keywords": [
+    "real estate",
+    "portfolio",
+    "consultant",
+    "website"
+  ],
+  "author": "[Tên Bạn]",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
