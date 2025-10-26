@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Hoàng Quốc Đại</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .admin-header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            margin-bottom: 2rem;
+        }
+        .admin-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .admin-nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            color: var(--primary);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .admin-nav-btn.active {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        .admin-section {
+            display: none;
+        }
+        .admin-section.active {
+            display: block;
+        }
+        .data-table {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .table-header {
+            background: var(--gray-100);
+            padding: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .table-content {
+            padding: 1rem;
+        }
+        .data-item {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            align-items: center;
+        }
+        .data-item:last-child {
+            border-bottom: none;
+        }
+        .data-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: var(--radius-sm);
+        }
+        .form-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        .form-modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Admin Container -->
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Panel</h1>
+            <p>Quản lý dữ liệu website bất động sản</p>
+        </div>
+
+        <!-- Admin Navigation -->
+        <div class="admin-nav">
+            <button class="admin-nav-btn active" data-section="dashboard">Dashboard</button>
+            <button class="admin-nav-btn" data-section="projects">Dự Án</button>
+            <button class="admin-nav-btn" data-section="testimonials">Đánh Giá</button>
+            <button class="admin-nav-btn" data-section="contacts">Liên Hệ</button>
+            <button class="admin-nav-btn" data-section="settings">Cài Đặt</button>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="admin-section active" id="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" id="totalProjects">12</span>
+                    <span class="stat-label">Dự Án</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="totalContacts">45</span>
+                    <span class="stat-label">Liên Hệ</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="totalTestimonials">23</span>
+                    <span class="stat-label">Đánh Giá</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">11.7 Tỷ</span>
+                    <span class="stat-label">Doanh Số</span>
+                </div>
+            </div>
+            
+            <div class="data-table">
+                <div class="table-header">Hoạt Động Gần Đây</div>
+                <div class="table-content">
+                    <div class="data-item">
+                        <div><strong>Khách hàng mới</strong><br>Nguyễn Văn A</div>
+                        <div>Dự án: CT5 Global City</div>
+                        <div>2 giờ trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Xem</button>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div><strong>Liên hệ mới</strong><br>Chị Lê Thị B</div>
+                        <div>Chủ đề: Tư vấn đầu tư</div>
+                        <div>4 giờ trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Xem</button>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div><strong>Đánh giá mới</strong><br>Anh Trần Văn C</div>
+                        <div>5 sao - Dịch vụ tốt</div>
+                        <div>1 ngày trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Xem</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="admin-section" id="projects">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>Quản Lý Dự Án</h3>
+                <button class="btn btn-primary" onclick="openModal('projectForm')">Thêm Dự Án</button>
+            </div>
+            <div class="data-table">
+                <div class="table-header">Danh Sách Dự Án</div>
+                <div class="table-content">
+                    <div class="data-item">
+                        <div><strong>CT5 Global City</strong><br>Căn hộ cao cấp</div>
+                        <div>11.7 Tỷ VNĐ</div>
+                        <div>Hoàn thành</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Sửa</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div><strong>Vinhomes Paradise</strong><br>Khu đô thị</div>
+                        <div>500+ căn hộ</div>
+                        <div>Đang bán</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Sửa</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="admin-section" id="testimonials">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>Quản Lý Đánh Giá</h3>
+                <button class="btn btn-primary" onclick="openModal('testimonialForm')">Thêm Đánh Giá</button>
+            </div>
+            <div class="data-table">
+                <div class="table-header">Danh Sách Đánh Giá</div>
+                <div class="table-content">
+                    <div class="data-item">
+                        <div><strong>Chị Nguyễn Thị Mai</strong><br>⭐⭐⭐⭐⭐</div>
+                        <div>"Anh Đại rất chuyên nghiệp..."</div>
+                        <div>2 ngày trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Sửa</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div><strong>Anh Trần Văn Nam</strong><br>⭐⭐⭐⭐⭐</div>
+                        <div>"Dịch vụ tư vấn đầu tư..."</div>
+                        <div>1 tuần trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Sửa</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Section -->
+        <div class="admin-section" id="contacts">
+            <h3>Quản Lý Liên Hệ</h3>
+            <div class="data-table">
+                <div class="table-header">Danh Sách Liên Hệ</div>
+                <div class="table-content">
+                    <div class="data-item">
+                        <div><strong>Nguyễn Văn A</strong><br>nguyenvana@email.com</div>
+                        <div>Tư vấn mua bán</div>
+                        <div>2 giờ trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Xem</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div><strong>Chị Lê Thị B</strong><br>lethib@email.com</div>
+                        <div>Đầu tư bất động sản</div>
+                        <div>4 giờ trước</div>
+                        <div class="data-actions">
+                            <button class="btn btn-primary btn-small">Xem</button>
+                            <button class="btn btn-outline btn-small">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="admin-section" id="settings">
+            <h3>Cài Đặt Website</h3>
+            <div class="data-table">
+                <div class="table-header">Thông Tin Cá Nhân</div>
+                <div class="table-content">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Tên</label>
+                            <input type="text" class="form-input" value="Hoàng Quốc Đại">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Chức vụ</label>
+                            <input type="text" class="form-input" value="Giám Đốc Kinh Doanh Miền Nam">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-input" value="090 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" value="dai.hoang@fivestar.vn">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Địa chỉ</label>
+                            <input type="text" class="form-input" value="123 Nguyễn Huệ, Q1, TP.HCM">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lưu Thay Đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="form-modal" id="projectForm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Dự Án Mới</h3>
+                <button class="close-modal" onclick="closeModal('projectForm')">&times;</button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Tên Dự Án</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Loại Dự Án</label>
+                    <select class="form-input" required>
+                        <option value="">Chọn loại dự án</option>
+                        <option value="can-ho">Căn hộ</option>
+                        <option value="khu-do-thi">Khu đô thị</option>
+                        <option value="nha-pho">Nhà phố</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mô Tả</label>
+                    <textarea class="form-textarea" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Hình Ảnh</label>
+                    <input type="file" class="form-input" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Giá/Thông Số</label>
+                    <input type="text" class="form-input" placeholder="VD: 11.7 Tỷ VNĐ">
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm Dự Án</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-modal" id="testimonialForm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Đánh Giá Mới</h3>
+                <button class="close-modal" onclick="closeModal('testimonialForm')">&times;</button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Tên Khách Hàng</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Đánh Giá (Sao)</label>
+                    <select class="form-input" required>
+                        <option value="5">⭐⭐⭐⭐⭐ (5 sao)</option>
+                        <option value="4">⭐⭐⭐⭐ (4 sao)</option>
+                        <option value="3">⭐⭐⭐ (3 sao)</option>
+                        <option value="2">⭐⭐ (2 sao)</option>
+                        <option value="1">⭐ (1 sao)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nội Dung Đánh Giá</label>
+                    <textarea class="form-textarea" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm Đánh Giá</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Popup Placeholder -->
+    <div id="popup-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script>
+        // Admin functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation between sections
+            const navBtns = document.querySelectorAll('.admin-nav-btn');
+            const sections = document.querySelectorAll('.admin-section');
+
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetSection = this.getAttribute('data-section');
+                    
+                    // Remove active class from all buttons and sections
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked button and target section
+                    this.classList.add('active');
+                    document.getElementById(targetSection).classList.add('active');
+                });
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        document.querySelectorAll('.form-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.form-modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "email": "nguyenvana@email.com",
+      "phone": "0901234567",
+      "subject": "Tư vấn mua bán",
+      "message": "Tôi muốn tìm hiểu về dự án CT5 Global City",
+      "date": "2024-01-20T10:30:00Z",
+      "status": "Chưa xử lý"
+    },
+    {
+      "id": 2,
+      "name": "Chị Lê Thị B",
+      "email": "lethib@email.com",
+      "phone": "0907654321",
+      "subject": "Đầu tư bất động sản",
+      "message": "Tôi quan tâm đến cơ hội đầu tư bất động sản",
+      "date": "2024-01-19T14:20:00Z",
+      "status": "Đã liên hệ"
+    },
+    {
+      "id": 3,
+      "name": "Anh Trần Văn C",
+      "email": "tranvanc@email.com",
+      "phone": "0909876543",
+      "subject": "Quản lý dự án",
+      "message": "Cần tư vấn về quản lý dự án bất động sản",
+      "date": "2024-01-18T09:15:00Z",
+      "status": "Đã xử lý"
+    }
+  ]
+}

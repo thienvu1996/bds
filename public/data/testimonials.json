@@ -1,0 +1,36 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Chị Nguyễn Thị Mai",
+      "rating": 5,
+      "comment": "Anh Đại rất chuyên nghiệp và nhiệt tình. Anh đã giúp tôi tìm được căn hộ ưng ý với giá tốt nhất thị trường.",
+      "date": "2024-01-15",
+      "project": "CT5 Global City"
+    },
+    {
+      "id": 2,
+      "name": "Anh Trần Văn Nam",
+      "rating": 5,
+      "comment": "Dịch vụ tư vấn đầu tư của anh rất chi tiết và chính xác. Tôi đã thu được lợi nhuận cao từ các dự án anh giới thiệu.",
+      "date": "2024-01-10",
+      "project": "Vinhomes Paradise"
+    },
+    {
+      "id": 3,
+      "name": "Chị Lê Thị Hoa",
+      "rating": 5,
+      "comment": "Quy trình làm việc rất minh bạch và nhanh chóng. Anh Đại luôn sẵn sàng hỗ trợ 24/7 khi tôi cần.",
+      "date": "2024-01-08",
+      "project": "Vinhomes MB1"
+    },
+    {
+      "id": 4,
+      "name": "Anh Phạm Văn Đức",
+      "rating": 5,
+      "comment": "Chuyên môn cao và tận tâm với khách hàng. Tôi rất hài lòng với dịch vụ của anh Đại.",
+      "date": "2024-01-05",
+      "project": "CT5 Global City"
+    }
+  ]
+}

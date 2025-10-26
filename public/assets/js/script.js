@@ -347,22 +347,42 @@ function addTypingEffect() {
 
 // Image Popup Functionality
 function initImagePopup() {
+    console.log('Creating popup container...');
+    
     // Create popup container
     const popupContainer = document.createElement('div');
     popupContainer.className = 'image-popup';
     popupContainer.innerHTML = `
         <div class="close-btn">×</div>
-        <img src="" alt="">
+        <div class="popup-content">
+            <img src="" alt="">
+            <div class="image-caption"></div>
+        </div>
     `;
     document.body.appendChild(popupContainer);
+    console.log('Popup container created and added to DOM');
     
     // Add click events to all popup images
     const popupImages = document.querySelectorAll('.popup-image');
-    popupImages.forEach(img => {
-        img.addEventListener('click', function() {
+    console.log('Found popup images:', popupImages.length);
+    
+    popupImages.forEach((img, index) => {
+        console.log(`Adding click event to image ${index + 1}:`, img.src);
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Image clicked:', this.src);
+            
             const popupImg = popupContainer.querySelector('img');
+            const caption = popupContainer.querySelector('.image-caption');
+            
             popupImg.src = this.src;
             popupImg.alt = this.alt;
+            
+            // Get caption from data-caption attribute or use alt text
+            const captionText = this.getAttribute('data-caption') || this.alt || 'Hình ảnh dự án';
+            caption.textContent = captionText;
+            
+            console.log('Showing popup with caption:', captionText);
             popupContainer.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         });
@@ -393,6 +413,6 @@ function initImagePopup() {
 
 // Initialize image popup when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing image popup...');
     initImagePopup();
 });
-;
