@@ -1,34 +1,48 @@
-[
+{
+  "projects": [
     {
-        "id": 1,
-        "title": "Vinhomes Ocean Park",
-        "type": "Chung cư Cao cấp",
-        "description": "Đã tư vấn thành công 20 giao dịch đầu tư thuê/lại. Phân tích Tỷ suất Sinh lời >12%/năm.",
-        "image": "assets/images/project-image-1.jpg",
-        "caseStudyLink": "#"
+      "id": 1,
+      "name": "CT5 Global City",
+      "category": "Căn Hộ Cao Cấp",
+      "description": "Dự án căn hộ cao cấp với vị trí đắc địa, tiện ích hiện đại và tiềm năng tăng giá cao.",
+      "price": "11.7 Tỷ VNĐ",
+      "status": "Hoàn thành",
+      "image": "../assets/images/Ct5/thanhtuuCT5.jpg",
+      "features": ["Vị trí đắc địa", "Tiện ích 5 sao", "Tiềm năng tăng giá"],
+      "stats": "11.7 Tỷ VNĐ - Doanh số đã đạt được"
     },
     {
-        "id": 2,
-        "title": "Đất Nền ven biển X",
-        "type": "Nghỉ dưỡng",
-        "description": "Tư vấn pháp lý cho Khách hàng nước ngoài. Đảm bảo quy hoạch và giấy phép xây dựng rõ ràng.",
-        "image": "assets/images/project-image-2.jpg",
-        "caseStudyLink": "#"
+      "id": 2,
+      "name": "Vinhomes Paradise",
+      "category": "Khu Đô Thị",
+      "description": "Khu đô thị sinh thái cao cấp với hệ thống tiện ích hoàn chỉnh và môi trường sống lý tưởng.",
+      "price": "500+ căn hộ",
+      "status": "Đang bán",
+      "image": "../assets/images/Vin/paradise.jpg",
+      "features": ["Sinh thái", "Tiện ích đầy đủ", "An ninh 24/7"],
+      "stats": "500+ - Căn hộ đã bán"
     },
     {
-        "id": 3,
-        "title": "Dự án The Grand Manhattan",
-        "type": "Chung cư cao cấp",
-        "description": "Dự án nổi bật với thiết kế hiện đại và vị trí đắc địa. Tư vấn đầu tư và cho thuê thành công.",
-        "image": "assets/images/project-image-3.jpg",
-        "caseStudyLink": "#"
+      "id": 3,
+      "name": "Vinhomes MB1",
+      "category": "Căn Hộ",
+      "description": "Dự án căn hộ cao cấp với tiêu chuẩn 5 sao, tiện ích hiện đại.",
+      "price": "Liên hệ",
+      "status": "Đang bán",
+      "image": "../assets/images/Vin/mb1.jpg",
+      "features": ["5 sao", "Cao cấp"],
+      "stats": "Dự án cao cấp"
     },
     {
-        "id": 4,
-        "title": "Biệt thự nghỉ dưỡng tại Đà Nẵng",
-        "type": "Biệt thự",
-        "description": "Tư vấn và hỗ trợ khách hàng trong việc mua bán biệt thự nghỉ dưỡng tại Đà Nẵng.",
-        "image": "assets/images/project-image-4.jpg",
-        "caseStudyLink": "#"
+      "id": 4,
+      "name": "Vinhomes MB2",
+      "category": "Căn Hộ",
+      "description": "Thiết kế hiện đại, không gian sống tiện nghi và thoải mái.",
+      "price": "Liên hệ",
+      "status": "Đang bán",
+      "image": "../assets/images/Vin/mb2.jpg",
+      "features": ["Hiện đại", "Tiện nghi"],
+      "stats": "Thiết kế tinh tế"
     }
-]
+  ]
+}

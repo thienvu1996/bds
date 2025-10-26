@@ -5,9 +5,6 @@ node_modules/
 *.log
 
 # Ignore root files that are not needed for deployment
-index.html
-assets/
-data/
 README.md
 LICENSE
 
