@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "*.html",
       "use": "@vercel/static"
     },
@@ -12,10 +16,17 @@
     {
       "src": "components/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "data/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ],
   "outputDirectory": "."
 }
