@@ -3,93 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cảm Ơn - Hoàng Quốc Đại</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Cảm Ơn! - Hoàng Quốc Đại</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .thank-you-container {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            padding: 60px 40px;
+            box-shadow: var(--shadow-light);
+            max-width: 600px;
+            width: 100%;
+        }
+        .thank-you-container h1 {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .thank-you-container p {
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .thank-you-container .btn {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1em;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .thank-you-container .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
-
-    <!-- Thank You Section -->
-    <section class="hero" style="padding: 8rem 0 6rem;">
-        <div class="container">
-            <div class="hero-content">
-                <div style="font-size: 4rem; margin-bottom: 2rem;">🎉</div>
-                <h1>Cảm Ơn Bạn!</h1>
-                <p class="subtitle">Tin nhắn của bạn đã được gửi thành công</p>
-                <p class="description">
-                    Tôi đã nhận được thông tin liên hệ của bạn và sẽ phản hồi trong thời gian sớm nhất có thể. 
-                    Cảm ơn bạn đã tin tưởng và lựa chọn dịch vụ của tôi.
-                </p>
-                <div class="cta-buttons">
-                    <a href="index.html" class="btn btn-primary">Về Trang Chủ</a>
-                    <a href="projects.html" class="btn btn-secondary">Xem Dự Án</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Next Steps Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Bước Tiếp Theo</h2>
-                <p>Những gì sẽ xảy ra sau khi bạn gửi tin nhắn</p>
-            </div>
-            <div class="grid grid-3">
-                <div class="card">
-                    <div class="card-icon">📞</div>
-                    <h3>Liên Hệ Trong 24h</h3>
-                    <p>Tôi sẽ gọi điện hoặc gửi email phản hồi trong vòng 24 giờ làm việc.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">💬</div>
-                    <h3>Tư Vấn Chi Tiết</h3>
-                    <p>Chúng ta sẽ thảo luận chi tiết về nhu cầu và mong muốn của bạn.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🏠</div>
-                    <h3>Tham Quan Dự Án</h3>
-                    <p>Hướng dẫn bạn tham quan các dự án phù hợp với yêu cầu.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Info Section -->
-    <section class="section" style="background: var(--gray-50);">
-        <div class="container">
-            <div class="text-center">
-                <h2>Liên Hệ Trực Tiếp</h2>
-                <p>Nếu bạn cần hỗ trợ ngay lập tức, hãy liên hệ trực tiếp với tôi</p>
-                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
-                        <strong>Điện Thoại</strong>
-                        <p>090 123 4567</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">✉️</div>
-                        <strong>Email</strong>
-                        <p>dai.hoang@fivestar.vn</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📍</div>
-                        <strong>Địa Chỉ</strong>
-                        <p>123 Nguyễn Huệ, Q1, TP.HCM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Popup Placeholder -->
-    <div id="popup-placeholder"></div>
-
-    <script src="js/components.js"></script>
+    <div class="thank-you-container">
+        <h1>🎉 Cảm Ơn Bạn!</h1>
+        <p>Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể.</p>
+        <a href="index.html" class="btn">Quay Lại Trang Chủ</a>
+    </div>
 </body>
 </html>
