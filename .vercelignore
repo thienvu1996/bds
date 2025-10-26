@@ -1,4 +1,14 @@
-node_modules
-.git
-.env
+# Ignore development files
+node_modules/
+.git/
+.vscode/
 *.log
+
+# Ignore root files that are not needed for deployment
+index.html
+assets/
+data/
+README.md
+LICENSE
+
+# Keep only public folder for deployment
