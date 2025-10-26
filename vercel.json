@@ -1,32 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "components/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "data/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "outputDirectory": "."
+  "builds": [{ "src": "public/**/*", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "/public/$1" }]
 }
